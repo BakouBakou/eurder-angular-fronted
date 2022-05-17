@@ -7,6 +7,7 @@ import {LayoutModule} from "./layout/layout.module";
 import {CreateCustomerComponent} from './create-customer/create-customer.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     AppRoutingModule,
     LayoutModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

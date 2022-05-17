@@ -4,12 +4,12 @@
     <form [formGroup]="createCustomerForm" (ngSubmit)="onSubmit()">
       <div class="row">
         <div class="col-6">
-          <label class="form-label" for="firstName">Firstname</label>
-          <input class="form-control" id="firstName" type="text" formControlName="firstName"/>
+          <label class="form-label" for="firstname">Firstname</label>
+          <input class="form-control" id="firstname" type="text" formControlName="firstname"/>
         </div>
         <div class="col-6">
-          <label class="form-label" for="lastName">Lastname</label>
-          <input class="form-control" id="lastName" type="text" formControlName="lastName"/>
+          <label class="form-label" for="lastname">Lastname</label>
+          <input class="form-control" id="lastname" type="text" formControlName="lastname"/>
         </div>
       </div>
       <div [formGroup]="emailForm">
