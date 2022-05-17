@@ -52,4 +52,8 @@ export class CreateCustomerComponent implements OnInit {
       .subscribe((customer) => this.router.navigateByUrl('/customers/' + customer.id));
   }
 
+  onCancel() {
+    this.router.navigateByUrl('/customers');
+  }
+
 }
