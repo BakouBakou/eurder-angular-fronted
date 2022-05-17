@@ -1,4 +1,4 @@
-<main class="container-sm">
+<main class="container">
   <section>
     <h3>Create Customer</h3>
     <form [formGroup]="createCustomerForm" (ngSubmit)="onSubmit()">
@@ -24,11 +24,11 @@
           </div>
         </div>
       </div>
-      <div [formGroup]="phoneNumberForm">
+      <div  [formGroup]="phoneNumberForm">
         <div class="row">
           <label class="form-label" for="countryCallingCode">Phone number (mobile)</label>
           <p class="col-auto fs-4 text-center">+</p>
-          <div class="col-1">
+          <div class="col-2">
             <input class="form-control" id="countryCallingCode" type="tel" maxlength="4"
                    formControlName="countryCallingCode"/>
           </div>
