@@ -4,19 +4,25 @@ import {PhoneNumber} from "./PhoneNumber";
 
 export class Customer {
 
-  private _id!: number;
-
   constructor(
-    private firstname: string,
-    private lastname: string,
+    private _id: string,
+    private _firstname: string,
+    private _lastname: string,
     private email: Email,
     private address: Address,
-    private phoneNumber: PhoneNumber
-  ) {
-  }
+    private phoneNumber: PhoneNumber,
+  ) {}
 
-  get id(): number {
+  get id(): string {
     return this._id;
   }
 
+
+  get firstname(): string {
+    return this._firstname;
+  }
+
+  get lastname(): string {
+    return this._lastname;
+  }
 }
