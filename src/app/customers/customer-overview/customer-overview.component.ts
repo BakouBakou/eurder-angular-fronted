@@ -12,6 +12,7 @@ import {Customer} from "../../model/Customer";
 export class CustomerOverviewComponent implements OnInit {
 
   customers: Customer[] = [];
+  searchText: string = '';
 
   constructor(private router: Router, private customerService: CustomerService) { }
 

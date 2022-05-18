@@ -1,12 +1,17 @@
-<section>
-  <h3>Customers</h3>
+<section xmlns="http://www.w3.org/1999/html">
+  <div class="row">
+    <h3 class="col">Customers</h3>
+    <div class="col-3 g-0">
+        <input class=" col-3 g-0 form-control" type="search" placeholder="Filter by last name" [(ngModel)]="searchText">
+    </div>
+  </div>
   <div class="row bg-light border p-2 align-items-center">
     <span class="col-4">ID</span>
     <span class="col-3">FIRSTNAME</span>
     <span class="col-3">LASTNAME</span>
     <button class="col-2 btn btn-success" type="button" (click)="onNewCustomer()">NEW CUSTOMER</button>
   </div>
-  <div class="row border p-2 align-items-center" *ngFor="let customer of customers">
+  <div class="row border p-2 align-items-center" *ngFor="let customer of customers | customerLastNameStartsWith: searchText">
     <span class="col-4">{{customer.id}}</span>
     <span class="col-3">{{customer.firstname}}</span>
     <span class="col-3">{{customer.lastname}}</span>

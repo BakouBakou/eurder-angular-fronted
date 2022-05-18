@@ -6,15 +6,17 @@ import {AppComponent} from './app.component';
 import {LayoutModule} from "./layout/layout.module";
 import {CreateCustomerComponent} from './customers/create-customer/create-customer.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { CustomerOverviewComponent } from './customers/customer-overview/customer-overview.component';
+import { CustomerLastNameStartsWithPipe } from './pipes/customer-last-name-starts-with.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateCustomerComponent,
-    CustomerOverviewComponent
+    CustomerOverviewComponent,
+    CustomerLastNameStartsWithPipe
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { CustomerOverviewComponent } from './customers/customer-overview/custome
     LayoutModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
