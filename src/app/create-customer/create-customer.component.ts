@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 import {Country} from "../model/Country";
 import {CustomerService} from "../services/customer.service";
 import {first} from "rxjs";
@@ -12,28 +12,30 @@ import {Router} from "@angular/router";
 })
 export class CreateCustomerComponent implements OnInit {
 
-
+  triedToSubmitForm: boolean = false;
+  formIsValid!: boolean;
   countries: string[] = Object.values(Country);
 
   createCustomerForm = this.formBuilder.group({
-    firstname: '',
-    lastname: '',
+    firstname: ['', [Validators.required]],
+    lastname: ['', [Validators.required]],
   });
 
   emailForm = this.formBuilder.group({
-    localPart: '',
-    domain: '',
+    localPart: ['', [Validators.required]],
+    domain: ['', [Validators.required]],
   });
   addressForm = this.formBuilder.group({
-    streetName: '',
-    houseNumber: '',
-    postalCode: '',
-    country: ''
+    streetName: ['', [Validators.required]],
+    houseNumber: ['', [Validators.required]],
+    postalCode: ['', [Validators.required]],
+    country: ['', [Validators.required]]
   });
   phoneNumberForm = this.formBuilder.group({
-    number: '',
-    countryCallingCode: ''
+    number: ['', [Validators.required]],
+    countryCallingCode: ['', [Validators.required]]
   });
+
 
   constructor(private formBuilder: FormBuilder, private customerService: CustomerService, private router: Router) {
   }
@@ -46,7 +48,14 @@ export class CreateCustomerComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.createCustomerForm.value);
+    this.triedToSubmitForm = true;
+    this.formIsValid = this.createCustomerForm.valid;
+    if (this.formIsValid) {
+      this.addCustomer();
+    }
+  }
+
+  private addCustomer() {
     this.customerService.addCustomer(this.createCustomerForm.value)
       .pipe(first())
       .subscribe((customer) => this.router.navigateByUrl('/customers/' + customer.id));

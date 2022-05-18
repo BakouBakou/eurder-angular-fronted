@@ -56,10 +56,14 @@
           <div class="col-8">
             <label class="form-label" for="country">Country</label>
             <select id="country" class="form-select" formControlName="country">
-              <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+              <option [value]="''">Select country</option>
+              <option *ngFor="let country of countries" [value] = "country">{{country}}</option>
             </select>
           </div>
         </div>
+      </div>
+      <div *ngIf="!formIsValid && triedToSubmitForm">
+        <p class="text-danger fs-3 text-center">Please fill in all the fields above before submitting.</p>
       </div>
       <div class="row justify-content-end">
         <div class="col-7">
