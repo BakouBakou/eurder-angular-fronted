@@ -16,7 +16,7 @@
     <span class="col-3">{{customer.firstname}}</span>
     <span class="col-3">{{customer.lastname}}</span>
     <div class="col-2 d-flex g-0 gap-4">
-      <button class="col btn btn-secondary" type="button">VIEW</button>
+      <a class="col btn btn-secondary" type="button" [routerLink]="['/customers', customer.id]">VIEW</a>
       <button class="col btn btn-primary" type="button">EDIT</button>
     </div>
   </div>

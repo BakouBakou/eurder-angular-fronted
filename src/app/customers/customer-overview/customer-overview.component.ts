@@ -29,6 +29,5 @@ export class CustomerOverviewComponent implements OnInit {
       console.log(customers[3]);
       this.customers = customers;
     });
-    this.customerService.test().pipe(first()).subscribe(test => console.log(test))
   }
 }

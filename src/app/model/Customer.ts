@@ -18,6 +18,18 @@ export class Customer {
   }
 
 
+  get email(): Email {
+    return this._email;
+  }
+
+  get address(): Address {
+    return this._address;
+  }
+
+  get phoneNumber(): PhoneNumber {
+    return this._phoneNumber;
+  }
+
   get firstname(): string {
     return this._firstname;
   }

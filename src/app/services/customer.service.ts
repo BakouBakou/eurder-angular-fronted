@@ -21,7 +21,7 @@ export class CustomerService {
     return this.http.get<Customer[]>(this.url);
   }
 
-  test(): Observable<any[]> {
-    return this.http.get<any[]>(this.url)
+  getCustomerById(id: string): Observable<Customer> {
+    return this.http.get<Customer>(this.url + '/' + id)  ;
   }
 }

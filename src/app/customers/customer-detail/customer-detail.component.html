@@ -1,0 +1,64 @@
+<section>
+  <div class="row d-flex align-items-center">
+    <h3 class="col-auto">Customer <span class="text-secondary fs-5">{{customer.id}}</span></h3>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <label class="form-label" for="firstname">Firstname</label>
+      <input [value]="customer.firstname" class="form-control" id="firstname" type="text" disabled/>
+    </div>
+    <div class="col-6">
+      <label class="form-label" for="lastname">Lastname</label>
+      <input [value]="customer.lastname" class="form-control" id="lastname" type="text" disabled/>
+    </div>
+  </div>
+  <div class="row">
+    <label class="form-label" for="email-local">Email</label>
+    <div class="col-6">
+      <input [value]="customer.email.localPart" class="form-control" id="email-local" type="text" disabled/>
+    </div>
+    <p class="col-auto fs-4 text-center">@</p>
+    <div class="col">
+      <input [value]="customer.email.domain" class="form-control" id="email-domain" type="text" disabled/>
+    </div>
+  </div>
+  <div class="row">
+    <label class="form-label" for="countryCallingCode">Phone number (mobile)</label>
+    <p class="col-auto fs-4 text-center">+</p>
+    <div class="col-2">
+      <input [value]="customer.phoneNumber.countryCallingCode" class="form-control" id="countryCallingCode" type="tel"
+             maxlength="4" disabled/>
+    </div>
+    <div class="col">
+      <input [value]="customer.phoneNumber.number" class="form-control" id="phoneNumber" type="tel" disabled/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-10">
+      <label class="form-label" for="street">Street</label>
+      <input [value]="customer.address.streetName" class="form-control" id="street" type="text" disabled/>
+    </div>
+    <div class="col-2">
+      <label class="form-label" for="number">Number</label>
+      <input [value]="customer.address.houseNumber" class="form-control" id="number" type="text" disabled/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <label class="form-label" for="postalCode">Postal code</label>
+      <input [value]="customer.address.postalCode" class="form-control" id="postalCode" type="text" disabled/>
+    </div>
+    <div class="col-8">
+      <label class="form-label" for="country">Country</label>
+      <input [value]="customer.address.country" class="form-control" id="country" type="text" disabled/>
+    </div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col-2">
+      <button class="col-12 btn btn-primary" type="submit">EDIT</button>
+    </div>
+    <div class="col-auto">
+      <button class="col-auto btn btn-secondary" type="button" (click)="onBack()">BACK</button>
+    </div>
+  </div>
+</section>

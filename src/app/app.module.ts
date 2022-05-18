@@ -10,13 +10,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { CustomerOverviewComponent } from './customers/customer-overview/customer-overview.component';
 import { CustomerLastNameStartsWithPipe } from './pipes/customer-last-name-starts-with.pipe';
+import { CustomerDetailComponent } from './customers/customer-detail/customer-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateCustomerComponent,
     CustomerOverviewComponent,
-    CustomerLastNameStartsWithPipe
+    CustomerLastNameStartsWithPipe,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,
