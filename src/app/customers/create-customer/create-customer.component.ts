@@ -24,6 +24,7 @@ export class CreateCustomerComponent implements OnInit {
   emailForm = this.formBuilder.group({
     localPart: ['', [Validators.required]],
     domain: ['', [Validators.required]],
+    // complete: '',
   });
   addressForm = this.formBuilder.group({
     streetName: ['', [Validators.required]],
@@ -48,6 +49,11 @@ export class CreateCustomerComponent implements OnInit {
   }
 
   onSubmit() {
+    let email = this.createCustomerForm.value.email;
+    this.createCustomerForm.patchValue({
+      'email': {'complete': email.localPart + '@' + email.domain}
+    });
+    console.log(this.createCustomerForm.value);
     this.triedToSubmitForm = true;
     this.formIsValid = this.createCustomerForm.valid;
     if (this.formIsValid) {
@@ -56,6 +62,7 @@ export class CreateCustomerComponent implements OnInit {
   }
 
   private addCustomer() {
+    console.log(this.createCustomerForm.controls['email'].value);
     this.customerService.addCustomer(this.createCustomerForm.value)
       .pipe(first())
       .subscribe((customer) => this.router.navigateByUrl('/customers/' + customer.id));

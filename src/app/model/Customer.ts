@@ -8,9 +8,9 @@ export class Customer {
     private _id: string,
     private _firstname: string,
     private _lastname: string,
-    private email: Email,
-    private address: Address,
-    private phoneNumber: PhoneNumber,
+    private _email: Email,
+    private _address: Address,
+    private _phoneNumber: PhoneNumber,
   ) {}
 
   get id(): string {
@@ -25,4 +25,5 @@ export class Customer {
   get lastname(): string {
     return this._lastname;
   }
+
 }

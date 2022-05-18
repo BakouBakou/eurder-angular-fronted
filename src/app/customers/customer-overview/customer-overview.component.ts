@@ -24,6 +24,10 @@ export class CustomerOverviewComponent implements OnInit {
   }
 
   private getCustomers() {
-    this.customerService.getCustomers().pipe(first()).subscribe(customers => this.customers = customers);
+    this.customerService.getCustomers().pipe(first()).subscribe(customers => {
+      console.log(customers[3]);
+      this.customers = customers;
+    });
+    this.customerService.test().pipe(first()).subscribe(test => console.log(test))
   }
 }
